@@ -1,0 +1,3 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="jp.gr.java_conf.mitchibu.lib.curlyviewpager">
+	<application android:allowBackup="true"/>
+</manifest>
