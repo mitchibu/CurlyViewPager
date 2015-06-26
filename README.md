@@ -8,6 +8,8 @@ The CurlyViewPager is the View that was replaced by the effect of turning the pa
 It is displaying the image of the gallery. Please try to flip through.
 >ギャラリーの画像を表示しています。めくってみてください。
 
+[GooglePlay](https://play.google.com/store/apps/details?id=jp.gr.java_conf.mitchibu.curlyviewpager)
+
 #Gradle
 ```groovy
 repositories {
