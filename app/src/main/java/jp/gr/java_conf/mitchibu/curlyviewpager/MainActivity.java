@@ -1,6 +1,8 @@
 package jp.gr.java_conf.mitchibu.curlyviewpager;
 
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,7 +45,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 			cursor.moveToPosition(position);
 			String data = cursor.getString(cursor.getColumnIndex(MediaStore.MediaColumns.DATA));
 			ImageView v = new ImageView(container.getContext());
-			v.setImageURI(Uri.parse(data));
+			Bitmap tmp = BitmapFactory.decodeFile(Uri.parse(data).getPath());
+			float xr = (float)container.getWidth() / tmp.getWidth();
+			float yr = (float)container.getHeight() / tmp.getHeight();
+			float r = Math.min(xr, yr);
+			Bitmap bm = Bitmap.createScaledBitmap(tmp, (int)(tmp.getWidth() * r), (int)(tmp.getHeight() * r), true);
+			tmp.recycle();
+			v.setImageBitmap(bm);
 			v.setBackgroundColor(Color.WHITE);
 			container.addView(v);
 			return v;
