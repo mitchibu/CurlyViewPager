@@ -112,7 +112,7 @@ public class CurlyViewPager extends ViewPager {
 		canvas.restore();
 	}
 
-	//@Override
+	@Override
 	protected boolean drawChild(@NonNull Canvas canvas, @NonNull View child, long drawingTime) {
 		ViewGroup.LayoutParams lp = child.getLayoutParams();
 		if(lp instanceof LayoutParams && ((LayoutParams)lp).isDecor) {
